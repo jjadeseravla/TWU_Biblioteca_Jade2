@@ -1,15 +1,14 @@
 package com.twu.biblioteca.model;
 
-import com.twu.biblioteca.CheckUser;
+import com.twu.biblioteca.Login;
 import com.twu.biblioteca.input.IUserInput;
 
 public class AdminMenu {
     private IUserInput scanner;
-    private CheckUser checkUser;
+    private AdminMenu adminMenu;
 
-    public AdminMenu(IUserInput scanner, CheckUser checkUser) {
+    public AdminMenu(IUserInput scanner) {
         this.scanner = scanner;
-        this.checkUser = checkUser;
     }
 
 

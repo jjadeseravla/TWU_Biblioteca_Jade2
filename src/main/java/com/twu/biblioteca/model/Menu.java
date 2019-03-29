@@ -44,6 +44,7 @@ public class Menu {
 
         public boolean processCommand() {
             int userChoice = inputFromUser();
+
             switch(userChoice) {
                 case 0:
                     System.exit(0);

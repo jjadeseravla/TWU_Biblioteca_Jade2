@@ -33,17 +33,18 @@ public class BibliotecaApp {
         return new Movie[]{movie1, movie2, movie3};
     }
 
-    public boolean checkLibrarianStatus(CheckUser checkUser) {
-        return checkUser.isLibrarian();
+    public boolean checkLibrarianStatus(Login login) { //check in login if librarian is false or true by passing it in
+        return login.isLibrarian();
     }
 
 
     public void run() {
 
-        CheckUser checkUser = new CheckUser();
         Scanner scanner = new Scanner(System.in);
         IUserInput input = new UserInputScanner(scanner);
-        AdminMenu adminMenu = new AdminMenu(input, checkUser);
+        IUserInput inputNum = new UserInputScanner(scanner);
+        AdminMenu adminMenu = new AdminMenu(input);
+        Login login = new Login(inputNum, adminMenu);
 
         Book[] books = setupBooks();
         Movie[] movies = setupMovies();
@@ -52,15 +53,22 @@ public class BibliotecaApp {
         Instruction<Movie> movieInstruction = new Instruction<Movie>(movies);
         Librarian librarian = new Librarian(input, bookInstruction, movieInstruction);
 
-        if (!checkLibrarianStatus(checkUser)) {
-            System.out.println(adminMenu.menuOptions());
-            adminMenu.selector();
-
-        } else {
+//        if (checkLibrarianStatus(login)) {
+//            System.out.println(adminMenu.menuOptions());
+//            adminMenu.selector();
+//
+//        } else {
 
             // User user = new User("333-4444", "password");
             while (true) {
-                Login login = new Login(input);
+                login.userOrLibrarian();
+
+
+                if (checkLibrarianStatus(login)) { //1
+                    System.out.println(adminMenu.menuOptions());
+                    adminMenu.selector();
+
+                } else { //2
 
                 User user = login.enterUserDetails();
                 Menu menu = new Menu(input, librarian, user);
@@ -73,10 +81,6 @@ public class BibliotecaApp {
                     System.out.println(menu.showMenuOptions());
                     menu.selector();
                 }
-                //            if (user.isLibrarian()) {
-                //                System.out.println(adminMenu.menuOptions());
-                //                adminMenu.selector();
-                //            }
                 // if libraria2
                 // n display logged in users
             }
