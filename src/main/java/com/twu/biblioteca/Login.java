@@ -7,22 +7,15 @@ import com.twu.biblioteca.model.AdminMenu;
 
 public class Login {
     private IUserInput scanner;
-    private boolean isLibrarian;
+    //private boolean isLibrarian;
     private AdminMenu adminMenu;
+    private LibrarianUser librarianUser;
 
-    public Login(IUserInput scanner, AdminMenu adminMenu) {
+    public Login(IUserInput scanner, AdminMenu adminMenu, LibrarianUser librarianUser) {
         this.scanner = scanner;
-        this.isLibrarian = false;
+        //this.isLibrarian = false;
         this.adminMenu = adminMenu;
-    }
-
-    public boolean isLibrarian() {
-        return isLibrarian;
-    }
-
-
-    public void setLibrarian() {
-        this.isLibrarian = true;
+        this.librarianUser = librarianUser;
     }
 
     public int userInputNumber() {
@@ -36,7 +29,7 @@ public class Login {
 
         switch(userInputNumber()){
             case 1:
-                setLibrarian();
+                librarianUser.setLibrarian();
                 break;
             case 2:
                 System.out.println("you have chosen user");
@@ -44,8 +37,6 @@ public class Login {
             default:
                 System.out.println("Please enter either 1 or 2");
 
-//
-//
         }
 
 //        if (userInputNumber() == 1) {

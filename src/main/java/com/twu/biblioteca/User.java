@@ -13,7 +13,6 @@ public  class User {
         this.libraryNumber = libraryNumber;
         this.password = password;
         this.inSession = false;
-        //this.isLibrarian = false;
     }
 
     public String getLibraryNumber() {
@@ -36,9 +35,6 @@ public  class User {
         return inSession;
     }
 
-//    public boolean isLibrarian() {
-//        return isLibrarian;
-//    }
 
     protected boolean validate(String libraryNumber) {
         int numParts = libraryNumber.length();

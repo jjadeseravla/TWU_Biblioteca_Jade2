@@ -1,8 +1,12 @@
 //package com.twu.biblioteca;
 //
+//import com.twu.biblioteca.input.IUserInput;
 //import com.twu.biblioteca.model.AdminMenu;
+//import com.twu.biblioteca.model.Menu;
 //import org.junit.Before;
 //import org.junit.Test;
+//
+//import java.util.Scanner;
 //
 //import static org.junit.Assert.*;
 //import static org.mockito.Mockito.mock;
@@ -12,14 +16,14 @@
 //
 //    private Login login;
 //    private AdminMenu adminMenu;
+//    private Scanner scanner;
 //
 //
 //    @Before
 //    public void setUp() {
-//
-//        login = new Login();
-//        //bibliotecaApp = new BibliotecaApp();
-//        //adminMenu = mock(AdminMenu.class);
+//        adminMenu = mock(AdminMenu.class);
+//        //scanner = mock(IUserInput.class);
+//        //login = new Login(scanner, adminMenu);
 //    }
 //
 //    @Test
@@ -32,19 +36,29 @@
 //        login.setLibrarian();
 //        assertTrue(login.isLibrarian());
 //    }
-
-//    @Test
-//    public void checkLibrarianStatus() {
-//        login.setLibrarian();
-//        assertTrue(bibliotecaApp.checkLibrarianStatus(login));
+//
+//    public void mockInput(String inputData) {
+//        login = new Login(new TestUserInput(inputData), adminMenu);
 //    }
 //
 //    @Test
-//    public void adminMenuShouldBeCalledIfUserIsLibrarian() {
-//        login.setLibrarian();
-//        bibliotecaApp.checkLibrarianStatus(login);
-//        verify(adminMenu).menuOptions();
+//    public void userChosenIfPress1() {
+//        mockInput("1");
+//        assertEquals(login.userInputNumber(), 1);
 //    }
-
+//
+//    @Test
+//    public void librarianChosenIfPress2() {
+//        mockInput("2");
+//        assertEquals(login.userInputNumber(), 2);
+//    }
+//
+////    @Test
+////    public void adminMenuShouldBeCalledIfUserIsLibrarian() {
+////        login.setLibrarian();
+////        //bibliotecaApp.checkLibrarianStatus(login);
+////        verify(adminMenu).menuOptions();
+////    }
+//
 //}
-
+//

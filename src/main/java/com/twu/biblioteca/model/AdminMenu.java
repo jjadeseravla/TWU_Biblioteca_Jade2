@@ -1,14 +1,18 @@
 package com.twu.biblioteca.model;
 
+import com.twu.biblioteca.Librarian;
+import com.twu.biblioteca.LibrarianUser;
 import com.twu.biblioteca.Login;
 import com.twu.biblioteca.input.IUserInput;
 
 public class AdminMenu {
     private IUserInput scanner;
     private AdminMenu adminMenu;
+    private LibrarianUser librarianUser;
 
-    public AdminMenu(IUserInput scanner) {
+    public AdminMenu(IUserInput scanner, LibrarianUser librarianUser) {
         this.scanner = scanner;
+        this.librarianUser = librarianUser;
     }
 
 
@@ -39,9 +43,9 @@ public class AdminMenu {
 //            case 1:
 //                librarian.listBooks();
 //                break;
-//            case 2:
-//                CheckUser.logout();
-//                return true;
+            case 2:
+                librarianUser.logoutLibrarian();
+                return true;
             default:
                 invalidMessage();
                 break;

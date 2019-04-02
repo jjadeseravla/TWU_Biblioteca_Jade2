@@ -33,8 +33,8 @@ public class BibliotecaApp {
         return new Movie[]{movie1, movie2, movie3};
     }
 
-    public boolean checkLibrarianStatus(Login login) { //check in login if librarian is false or true by passing it in
-        return login.isLibrarian();
+    public boolean checkLibrarianStatus(LibrarianUser librarianUser) { //check in login if librarian is false or true by passing it in
+        return librarianUser.isLibrarian();
     }
 
 
@@ -43,8 +43,9 @@ public class BibliotecaApp {
         Scanner scanner = new Scanner(System.in);
         IUserInput input = new UserInputScanner(scanner);
         IUserInput inputNum = new UserInputScanner(scanner);
-        AdminMenu adminMenu = new AdminMenu(input);
-        Login login = new Login(inputNum, adminMenu);
+        LibrarianUser librarianUser = new LibrarianUser();
+        AdminMenu adminMenu = new AdminMenu(input, librarianUser);
+        Login login = new Login(inputNum, adminMenu, librarianUser);
 
         Book[] books = setupBooks();
         Movie[] movies = setupMovies();
@@ -64,7 +65,7 @@ public class BibliotecaApp {
                 login.userOrLibrarian();
 
 
-                if (checkLibrarianStatus(login)) { //1
+                if (checkLibrarianStatus(librarianUser)) { //1
                     System.out.println(adminMenu.menuOptions());
                     adminMenu.selector();
 
