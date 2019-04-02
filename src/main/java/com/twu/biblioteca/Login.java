@@ -57,9 +57,10 @@ public class Login {
 
 
     public User enterUserDetails() {
-        System.out.println("Please login and enter library number and password:");
+        System.out.println("Please login and enter name, library number and password:");
+        String name = scanner.nextLine();
         String libraryNumber = scanner.nextLine();
         String password = scanner.nextLine();
-        return new User(libraryNumber, password);
+        return new User(name, libraryNumber, password);
     }
 }

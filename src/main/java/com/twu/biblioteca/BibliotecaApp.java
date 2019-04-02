@@ -5,9 +5,7 @@ package com.twu.biblioteca;
         import com.twu.biblioteca.input.UserInputScanner;
         import com.twu.biblioteca.model.*;
 
-        import java.util.ArrayList;
-        import java.util.List;
-        import java.util.Scanner;
+        import java.util.*;
 
 public class BibliotecaApp {
 
@@ -44,23 +42,16 @@ public class BibliotecaApp {
         IUserInput input = new UserInputScanner(scanner);
         IUserInput inputNum = new UserInputScanner(scanner);
         LibrarianUser librarianUser = new LibrarianUser();
-        AdminMenu adminMenu = new AdminMenu(input, librarianUser);
-        Login login = new Login(inputNum, adminMenu, librarianUser);
 
         Book[] books = setupBooks();
         Movie[] movies = setupMovies();
 
-        Instruction<Book> bookInstruction = new Instruction<Book>(books); //<> this is an instruction of books
+        Instruction<Book> bookInstruction = new Instruction<Book>(books);//<> this is an instruction of books
         Instruction<Movie> movieInstruction = new Instruction<Movie>(movies);
         Librarian librarian = new Librarian(input, bookInstruction, movieInstruction);
+        AdminMenu adminMenu = new AdminMenu(input, librarianUser, librarian);
+        Login login = new Login(inputNum, adminMenu, librarianUser);
 
-//        if (checkLibrarianStatus(login)) {
-//            System.out.println(adminMenu.menuOptions());
-//            adminMenu.selector();
-//
-//        } else {
-
-            // User user = new User("333-4444", "password");
             while (true) {
                 login.userOrLibrarian();
 
@@ -82,7 +73,7 @@ public class BibliotecaApp {
                     System.out.println(menu.showMenuOptions());
                     menu.selector();
                 }
-                // if libraria2
+                // if librarian2
                 // n display logged in users
             }
 

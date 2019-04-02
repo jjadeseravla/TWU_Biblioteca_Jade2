@@ -1,5 +1,6 @@
 package com.twu.biblioteca.model;
 
+import com.twu.biblioteca.Instruction;
 import com.twu.biblioteca.Librarian;
 import com.twu.biblioteca.LibrarianUser;
 import com.twu.biblioteca.Login;
@@ -9,16 +10,17 @@ public class AdminMenu {
     private IUserInput scanner;
     private AdminMenu adminMenu;
     private LibrarianUser librarianUser;
+    private Librarian librarian;
 
-    public AdminMenu(IUserInput scanner, LibrarianUser librarianUser) {
+    public AdminMenu(IUserInput scanner, LibrarianUser librarianUser, Librarian librarian) {
         this.scanner = scanner;
         this.librarianUser = librarianUser;
+        this.librarian = librarian;
     }
-
 
     public String menuOptions() {
         return  "0. Exit Biblioteca\n" +
-                "1. Who has checked out a book\n" +
+                "1. Books that have been checked out by users\n" +
                 "2. User logout";
     }
 
@@ -40,9 +42,11 @@ public class AdminMenu {
             case 0:
                 //System.exit(0);
                 return true;
-//            case 1:
-//                librarian.listBooks();
-//                break;
+            case 1:
+
+                librarian.printUsersAndBooks();
+                //System.out.println(bookInstruction.getItemUsersMap());
+                break;
             case 2:
                 librarianUser.logoutLibrarian();
                 return true;

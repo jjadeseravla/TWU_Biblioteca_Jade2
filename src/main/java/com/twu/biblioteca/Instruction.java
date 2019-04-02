@@ -32,7 +32,7 @@ public class Instruction<T extends IItem> { //set any class name that itself imp
         } else {
             item.setAvailable(false);
             successfulCheckout(title);
-            itemUserMap.put(item, user);
+            itemUserMap.put(item, user); //need to store this info!!!!
         }
     }
 
@@ -74,6 +74,11 @@ public class Instruction<T extends IItem> { //set any class name that itself imp
     public T[] getItems() {
         return items;
     }
+
+    public Map getItemUsersMap() {
+        return itemUserMap;
+    }
+
 }
 
 

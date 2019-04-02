@@ -4,15 +4,21 @@ import org.apache.commons.lang3.StringUtils;
 
 public  class User {
 
+    private String name;
     private String libraryNumber;
     private String password;
     private boolean inSession;
     //private boolean isLibrarian;
 
-    public User(String libraryNumber, String password) {
+    public User(String name, String libraryNumber, String password) {
+        this.name = name;
         this.libraryNumber = libraryNumber;
         this.password = password;
         this.inSession = false;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getLibraryNumber() {
