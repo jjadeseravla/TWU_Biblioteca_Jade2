@@ -68,7 +68,7 @@ public class Librarian {
             System.out.println(mentry.getValue().getClass().getName());
         }
     }
-
+//  HOW DO I GET IT TO PRINT OUT THE BOOK.GETTITLE() AND USER.GETNAME()!!???
     //Map<T, User> itemUserMap;
     //itemUserMap.put(item, user);
 }
