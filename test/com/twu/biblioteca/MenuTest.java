@@ -25,7 +25,7 @@ public class MenuTest {
     public void setUp() {
         librarian = mock(Librarian.class);
         instruction = mock(Instruction.class);
-        user = new User("333-4444", "password");
+        user = new User("Jade", "333-4444", "password");
     }
 
     @Test

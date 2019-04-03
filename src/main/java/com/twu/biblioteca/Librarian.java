@@ -5,7 +5,9 @@ import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Movie;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 public class Librarian {
     private Instruction <Book> bookInstruction;
@@ -56,4 +58,17 @@ public class Librarian {
         String title = scanner.nextLine();
         return title;
     }
+
+    public void printUsersAndBooks() {
+        Set set = bookInstruction.getItemUsersMap().entrySet();
+        Iterator iterator = set.iterator();
+        while(iterator.hasNext()) {
+            Map.Entry mentry = (Map.Entry)iterator.next();
+            System.out.print("This book: "+ mentry.getKey().getClass().getName() + " was checked out by ");
+            System.out.println(mentry.getValue().getClass().getName());
+        }
+    }
+
+    //Map<T, User> itemUserMap;
+    //itemUserMap.put(item, user);
 }
