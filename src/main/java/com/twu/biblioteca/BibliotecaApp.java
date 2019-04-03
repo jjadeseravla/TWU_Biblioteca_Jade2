@@ -20,7 +20,7 @@ public class BibliotecaApp {
     public Book[] setupBooks() {
         Book book1 = new Book("The Count of MonteCristo", "Alexandre Dumas", 1800);
         Book book2 = new Book("The God Delusion", "Richard Dawkins", 1980);
-        Book book3 = new Book("Sapians", "Yuval Herari", 2011);
+        Book book3 = new Book("Sapiens", "Yuval Herari", 2011);
         return new Book[]{book1, book2, book3};
     }
 
@@ -41,11 +41,7 @@ public class BibliotecaApp {
         Scanner scanner = new Scanner(System.in);
         IUserInput input = new UserInputScanner(scanner);
         IUserInput inputNum = new UserInputScanner(scanner);
-<<<<<<< HEAD
         Admin admin = new Admin();
-=======
-        LibrarianUser librarianUser = new LibrarianUser();
->>>>>>> 97c6dad8744825617ea8357d523e13a185d88c2a
 
         Book[] books = setupBooks();
         Movie[] movies = setupMovies();
@@ -53,13 +49,8 @@ public class BibliotecaApp {
         Instruction<Book> bookInstruction = new Instruction<Book>(books);//<> this is an instruction of books
         Instruction<Movie> movieInstruction = new Instruction<Movie>(movies);
         Librarian librarian = new Librarian(input, bookInstruction, movieInstruction);
-<<<<<<< HEAD
         AdminMenu adminMenu = new AdminMenu(input, admin, librarian);
         Login login = new Login(inputNum, adminMenu, admin);
-=======
-        AdminMenu adminMenu = new AdminMenu(input, librarianUser, librarian);
-        Login login = new Login(inputNum, adminMenu, librarianUser);
->>>>>>> 97c6dad8744825617ea8357d523e13a185d88c2a
 
             while (true) {
                 login.userOrLibrarian();
