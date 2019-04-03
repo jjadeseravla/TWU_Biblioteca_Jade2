@@ -3,23 +3,23 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.input.IUserInput;
 import com.twu.biblioteca.model.AdminMenu;
 
-public class LibrarianUser {
+public class Admin {
     //private IUserInput scanner;
-    private boolean isLibrarian;
+    private boolean isAdmin;
 
-    public LibrarianUser() {
-        this.isLibrarian = false;
+    public Admin() {
+        this.isAdmin = false;
     }
 
     public boolean isLibrarian() {
-        return isLibrarian;
+        return isAdmin;
     }
 
     public void setLibrarian() {
-        this.isLibrarian = true;
+        this.isAdmin = true;
     }
 
     public void logoutLibrarian() {
-        this.isLibrarian = false;
+        this.isAdmin = false;
     }
 }

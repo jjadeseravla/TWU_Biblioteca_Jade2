@@ -1,21 +1,18 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.User;
 import com.twu.biblioteca.input.IUserInput;
 import com.twu.biblioteca.model.AdminMenu;
 
 
 public class Login {
     private IUserInput scanner;
-    //private boolean isLibrarian;
     private AdminMenu adminMenu;
-    private LibrarianUser librarianUser;
+    private Admin admin;
 
-    public Login(IUserInput scanner, AdminMenu adminMenu, LibrarianUser librarianUser) {
+    public Login(IUserInput scanner, AdminMenu adminMenu, Admin admin) {
         this.scanner = scanner;
-        //this.isLibrarian = false;
         this.adminMenu = adminMenu;
-        this.librarianUser = librarianUser;
+        this.admin = admin;
     }
 
     public int userInputNumber() {
@@ -29,7 +26,7 @@ public class Login {
 
         switch(userInputNumber()){
             case 1:
-                librarianUser.setLibrarian();
+                admin.setLibrarian();
                 break;
             case 2:
                 System.out.println("you have chosen user");

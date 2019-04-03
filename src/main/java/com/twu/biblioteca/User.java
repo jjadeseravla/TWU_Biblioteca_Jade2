@@ -67,4 +67,10 @@ public  class User {
         this.inSession = false;
     }
 
+    public void showInfo() {
+        System.out.println("Your name is: " + getName());
+        System.out.println("Your library number is: " + getLibraryNumber());
+        System.out.println("Your password is: " + getPassword());
+    }
+
 }

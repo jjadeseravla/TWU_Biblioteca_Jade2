@@ -27,7 +27,8 @@ public class Menu {
                     "3. Return a book\n" +
                     "4. Display list of movies\n" +
                     "5. Checkout a movie\n" +
-                    "6. User logout";
+                    "6. Display User Info\n" +
+                    "7. User logout";
     }
 
         public int inputFromUser() {
@@ -65,6 +66,9 @@ public class Menu {
                     librarian.checkMovieOut(user);
                     break;
                 case 6:
+                    user.showInfo();
+                    break;
+                case 7:
                     user.logout();
                     return true;
                 default:
