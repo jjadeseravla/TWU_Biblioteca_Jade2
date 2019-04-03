@@ -1,5 +1,6 @@
 package com.twu.biblioteca.model;
 
+import com.twu.biblioteca.Instruction;
 import com.twu.biblioteca.Librarian;
 import com.twu.biblioteca.Admin;
 import com.twu.biblioteca.input.IUserInput;
