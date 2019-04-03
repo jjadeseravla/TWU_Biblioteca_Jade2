@@ -60,16 +60,10 @@ public class Librarian {
     }
 
     public void printUsersAndBooks() {
-        Set set = bookInstruction.getItemUsersMap().entrySet();
-        Iterator iterator = set.iterator();
-        while(iterator.hasNext()) {
-            Map.Entry mentry = (Map.Entry)iterator.next();
-            System.out.print("This book: "+ mentry.getKey().getClass().getName() + " was checked out by ");
-            System.out.println(mentry.getValue().getClass().getName());
+        Map<Book, User> itemUserMap = bookInstruction.getItemUsersMap() ;
+        for (Map.Entry<Book, User> bookUserPair : itemUserMap.entrySet()) {
+            System.out.println("This book is " + bookUserPair.getKey().getTitle());
+            System.out.println(" was checked out by " + bookUserPair.getValue().getName());
         }
     }
-
-//  HOW DO I GET IT TO PRINT OUT THE BOOK.GETTITLE() AND USER.GETNAME()!!???
-    //Map<T, User> itemUserMap;
-    //itemUserMap.put(item, user);
 }

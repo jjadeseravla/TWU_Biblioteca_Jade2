@@ -5,21 +5,21 @@ import com.twu.biblioteca.model.AdminMenu;
 
 public class Admin {
     //private IUserInput scanner;
-    private boolean isAdmin;
+    private boolean isLibrarian;
 
     public Admin() {
-        this.isAdmin = false;
+        this.isLibrarian = false;
     }
 
     public boolean isLibrarian() {
-        return isAdmin;
+        return isLibrarian;
     }
 
     public void setLibrarian() {
-        this.isAdmin = true;
+        this.isLibrarian = true;
     }
 
     public void logoutLibrarian() {
-        this.isAdmin = false;
+        this.isLibrarian = false;
     }
 }

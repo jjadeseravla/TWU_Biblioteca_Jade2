@@ -21,14 +21,19 @@ public class BibliotecaApp {
         Book book1 = new Book("The Count of MonteCristo", "Alexandre Dumas", 1800);
         Book book2 = new Book("The God Delusion", "Richard Dawkins", 1980);
         Book book3 = new Book("Sapiens", "Yuval Herari", 2011);
-        return new Book[]{book1, book2, book3};
+        Book book4 = new Book("1984", "George Orwell", 1949);
+        Book book5 = new Book("got", "George R R Martin", 2000);
+
+        return new Book[]{book1, book2, book3, book4, book5};
     }
 
     public Movie[] setupMovies() {
         Movie movie1 = new Movie("Titanic", 1997, "director1");
         Movie movie2 = new Movie("Bohemium Rhapsody", 2019, "director2", "9");
         Movie movie3 = new Movie("Schindler's list", 1994, "Stephen Spielberg", "8");
-        return new Movie[]{movie1, movie2, movie3};
+        Movie movie4 = new Movie("Toy Story", 1995, "John Leseter", "7");
+        Movie movie5 = new Movie("Her", 2015, "Joaquin Phoenix", "7");
+        return new Movie[]{movie1, movie2, movie3, movie4, movie5};
     }
 
     public boolean checkLibrarianStatus(Admin admin) { //check in login if librarian is false or true by passing it in
@@ -76,7 +81,6 @@ public class BibliotecaApp {
                 // if librarian2
                 // n display logged in users
             }
-
             
         }
     }
